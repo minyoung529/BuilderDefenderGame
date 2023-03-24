@@ -25,6 +25,7 @@ public class ResourceGenerator : MonoBehaviour
         if (nearByResourceAmount == 0)  // 비활성화
         {
             transform.Find("ResourceGeneratorOverlay").gameObject.SetActive(false);
+            transform.GetComponentInChildren<Animator>().enabled = false;
             enabled = false;
         }
         else
