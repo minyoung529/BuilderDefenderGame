@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,15 +15,28 @@ public class Enemy : MonoBehaviour
     private float lookForTimer;
     private float lookForTimerMax = 0.2f;
 
+    private HealthSytem healthSytem;
+
     private void Awake()
     {
         enemyRigidbody = GetComponent<Rigidbody2D>();
         lookForTimerMax = Random.Range(0f, lookForTimerMax);
+
+        healthSytem = GetComponent<HealthSytem>();
+        healthSytem.OnDied += HealthSytem_OnDied;
+    }
+
+    private void HealthSytem_OnDied(object sender, System.EventArgs e)
+    {
+        Destroy(gameObject);
     }
 
     private void Start()
     {
-        targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+        if(BuildingManager.Instance.GetHQBuilding() != null)
+        {
+            targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+        }
     }
 
     private void Update()
@@ -100,7 +112,10 @@ public class Enemy : MonoBehaviour
 
         if (targetTransform == null)
         {
-            targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+            if (BuildingManager.Instance.GetHQBuilding() != null)
+            {
+                targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
+            }
         }
     }
 }
