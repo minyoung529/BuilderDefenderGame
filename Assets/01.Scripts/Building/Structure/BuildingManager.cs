@@ -45,7 +45,8 @@ public class BuildingManager : MonoBehaviour
                 {
                     if (ResourceManager.Instance.CanAfford(activeBuildingType.constructionCostArray))
                     {
-                        InstantiateHarvester(activeBuildingType.prefab.gameObject);
+                        //InstantiateHarvester(activeBuildingType.prefab.gameObject);
+                        BuildingConstruction.Create(UtilClass.GetMouseWorldPosition(), activeBuildingType);
                         ResourceManager.Instance.SpendResources(activeBuildingType.constructionCostArray);
                         //TooltipUI.Instance.Hide();
                     }

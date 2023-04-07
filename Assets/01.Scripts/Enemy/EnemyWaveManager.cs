@@ -90,4 +90,9 @@ public class EnemyWaveManager : MonoBehaviour
     {
         return nextWaveSpawnTimer;
     }
+
+    public Vector3 GetSpawnPosition()
+    {
+        return spawnPosition.position;
+    }
 }

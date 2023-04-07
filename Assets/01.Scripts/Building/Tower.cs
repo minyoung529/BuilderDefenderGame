@@ -37,8 +37,6 @@ public class Tower : MonoBehaviour
 
             if (enemy)
             {
-                Debug.Log("FIND");
-
                 if (targetEnemy == null)
                 {
                     targetEnemy = enemy;
@@ -54,6 +52,8 @@ public class Tower : MonoBehaviour
             }
         }
     }
+
+
 
     private void HandleTargetting()
     {
