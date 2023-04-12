@@ -28,11 +28,18 @@ public class BuildingManager : MonoBehaviour
     {
         Instance = this;
         buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+        hqBuilding.GetComponent<HealthSytem>().OnDied += HQ_OnDied;
     }
 
     private void Start()
     {
         mainCam = Camera.main;
+    }
+
+    private void HQ_OnDied(object sender, EventArgs e)
+    {
+        SoundManager.Instance.PlaySound(Sound.GameOver);
+        GameOverUI.Instance.Show();
     }
 
     void Update()

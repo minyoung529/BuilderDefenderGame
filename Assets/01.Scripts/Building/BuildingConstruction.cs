@@ -52,6 +52,8 @@ public class BuildingConstruction : MonoBehaviour
 
     public static BuildingConstruction Create(Vector3 position, BuildingTypeSO buildingType)
     {
+        SoundManager.Instance.PlaySound(Sound.BuildingPlaced);
+
         BuildingConstruction temp = Instantiate(Resources.Load<BuildingConstruction>("pfBuildingConstruction"), position, Quaternion.identity);
         temp.SetBuildingType(buildingType);
 
