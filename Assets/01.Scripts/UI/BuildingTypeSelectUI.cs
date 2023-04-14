@@ -20,7 +20,7 @@ public class BuildingTypeSelectUI : MonoBehaviour
 
     private void Awake()
     {
-        buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+        buildingTypeList = GameAssets.Instance.buildingTypeList;
         resourceTransformDict = new Dictionary<BuildingTypeSO, Transform>();
 
         RectTransform resourceTemplate = transform.Find("ButtonTemplate").GetComponent<RectTransform>();

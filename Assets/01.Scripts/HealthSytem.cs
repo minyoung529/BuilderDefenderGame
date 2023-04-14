@@ -13,6 +13,8 @@ public class HealthSytem : MonoBehaviour
     private int healthAmountMax;
     private int healthAmount;
 
+    public event EventHandler OnHealthAmountMaxChanged;
+
     private void Awake()
     {
         healthAmount = healthAmountMax;
@@ -89,5 +91,7 @@ public class HealthSytem : MonoBehaviour
         {
             healthAmount = healthAmountMax;
         }
+
+        OnHealthAmountMaxChanged?.Invoke(this, EventArgs.Empty);
     }
 }

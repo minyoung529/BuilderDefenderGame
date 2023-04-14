@@ -56,7 +56,7 @@ public class ArrowProjectile : MonoBehaviour
 
     public static ArrowProjectile Create(Vector3 position, Enemy enemy)
     {
-        ArrowProjectile temp = Instantiate(Resources.Load<ArrowProjectile>("pfArrowProjectile"), position, Quaternion.identity);
+        ArrowProjectile temp = Instantiate(GameAssets.Instance.arrowProjectile, position, Quaternion.identity);
         temp.SetTarget(enemy);
 
         return temp;

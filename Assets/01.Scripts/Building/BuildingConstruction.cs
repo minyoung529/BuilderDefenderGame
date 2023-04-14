@@ -20,6 +20,8 @@ public class BuildingConstruction : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         constructionMaterial = spriteRenderer.material;
         buildingTypeHolder = GetComponent<BuildingTypeHolder>();
+
+        Instantiate(GameAssets.Instance.pfBuildingPlacedParticles, transform.position, Quaternion.identity);
     }
 
     private void Update()
@@ -30,6 +32,7 @@ public class BuildingConstruction : MonoBehaviour
         {
             Debug.Log("Ding!");
             Instantiate(buildingType.prefab, transform.position, Quaternion.identity);
+            Instantiate(GameAssets.Instance.pfBuildingPlacedParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
@@ -54,7 +57,7 @@ public class BuildingConstruction : MonoBehaviour
     {
         SoundManager.Instance.PlaySound(Sound.BuildingPlaced);
 
-        BuildingConstruction temp = Instantiate(Resources.Load<BuildingConstruction>("pfBuildingConstruction"), position, Quaternion.identity);
+        BuildingConstruction temp = Instantiate(GameAssets.Instance.buildingConstruction, position, Quaternion.identity);
         temp.SetBuildingType(buildingType);
 
         return temp;

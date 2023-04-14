@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class SoundManager : MonoBehaviour
 {
     private AudioSource audioSource;
+
+    private float volume = 0.5f;
 
     public static SoundManager Instance { get; private set; }
 
@@ -14,6 +17,7 @@ public class SoundManager : MonoBehaviour
     {
         Instance = this;
         audioSource = GetComponent<AudioSource>();
+        volume = PlayerPrefs.GetFloat("SoundVolume", 0.5f);
 
         soundClipDict = new Dictionary<Sound, AudioClip>();
 
@@ -25,8 +29,24 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(Sound sound)
     {
-        audioSource.PlayOneShot(soundClipDict[sound]);
+        audioSource.PlayOneShot(soundClipDict[sound], volume);
     }
+
+    public void IncreaseVolume()
+    {
+        volume += 0.1f;
+        volume = Mathf.Clamp01(volume);
+        PlayerPrefs.SetFloat("SoundVolume", volume);
+    }
+
+    public void DecreaseVolume()
+    {
+        volume -= 0.1f;
+        volume = Mathf.Clamp01(volume);
+        PlayerPrefs.SetFloat("SoundVolume", volume);
+    }
+
+    public float GetVolume() => volume;
 }
 
 

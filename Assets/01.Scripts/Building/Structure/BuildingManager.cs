@@ -27,7 +27,7 @@ public class BuildingManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+        buildingTypeList = GameAssets.Instance.buildingTypeList;
         hqBuilding.GetComponent<HealthSytem>().OnDied += HQ_OnDied;
     }
 
