@@ -8,11 +8,18 @@ public static class UtilClass
 
     public static Vector3 GetMouseWorldPosition()
     {
-        mainCamera ??= mainCamera = Camera.main;
+        if(mainCamera == null)
+            mainCamera = Camera.main;
+
         Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPosition.z = 0f;
 
         return mouseWorldPosition;
+    }
+
+    public static void Release()
+    {
+        mainCamera = null;
     }
 
     public static Vector3 GetRandomDir()

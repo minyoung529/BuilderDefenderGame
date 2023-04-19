@@ -16,11 +16,10 @@ public class BuildingRepairBtn : MonoBehaviour
     {
         Button b = GetComponentInChildren<Button>();
         b.onClick.AddListener(OnPressed);
-        Debug.Log(gameObject.name + " > " + transform.parent.name);
+
         if(healthSytem == null)
         {
             healthSytem = transform.parent.GetComponent<HealthSytem>();
-
         }
     }
 

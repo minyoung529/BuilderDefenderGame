@@ -24,6 +24,10 @@ public class GameAssets : MonoBehaviour
     public Transform pfEnemyDieParticles;
     public ResourceTypeListSO resourceTypeList;
     public Enemy enemy;
+    public SkillListSO skillList;
+
+    [Header("Skill")]
+    public Transform explosionSkill;
 
     private void Awake()
     {

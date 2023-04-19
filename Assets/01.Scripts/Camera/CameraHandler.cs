@@ -26,8 +26,6 @@ public class CameraHandler : MonoBehaviour
 
     void Update()
     {
-        if (!edgeScrolling) return;
-
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
@@ -45,6 +43,9 @@ public class CameraHandler : MonoBehaviour
         orthographicSize = Mathf.Lerp(orthographicSize, targetOrthoSize, Time.deltaTime * zoomSpeed);
 
         cmVcam.m_Lens.OrthographicSize = orthographicSize;
+
+        if (!edgeScrolling) return;
+        HandleMove();
     }
 
     private void HandleMove()

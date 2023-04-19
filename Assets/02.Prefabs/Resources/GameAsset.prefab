@@ -52,3 +52,4 @@ MonoBehaviour:
   pfEnemyDieParticles: {fileID: 4850068476918138423, guid: fa53ff3e077270e4d8a679c8fa7de07f, type: 3}
   resourceTypeList: {fileID: 11400000, guid: ff9cd7e31df22644d805beb4060d97d6, type: 2}
   enemy: {fileID: 440638469034112795, guid: 0225a2bdd51744940a02c91cccaa31be, type: 3}
+  skillList: {fileID: 11400000, guid: 2b55221e56c6e08408771fa6f23dd612, type: 2}

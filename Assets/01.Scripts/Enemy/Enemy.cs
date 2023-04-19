@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         if (targetTransform)
         {
             Vector3 moveDir = (targetTransform.position - transform.position).normalized;
-            float moveSpeed = 8f;
+            float moveSpeed = 3f/*8f*/;
 
             enemyRigidbody.velocity = moveDir * moveSpeed;
 
