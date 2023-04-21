@@ -1,6 +1,10 @@
+using DG.Tweening.Core;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
@@ -16,6 +20,15 @@ public class Enemy : MonoBehaviour
     private float lookForTimerMax = 0.2f;
 
     private HealthSytem healthSytem;
+
+    private float speed = 8f;
+
+    public bool exitIceBox = false;
+
+    [SerializeField]
+    private ParticleSystem slowParticle;
+    [SerializeField]
+    private ParticleSystem iceParticle;
 
     private void Awake()
     {
@@ -45,7 +58,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        if(BuildingManager.Instance.GetHQBuilding() != null)
+        if (BuildingManager.Instance.GetHQBuilding() != null)
         {
             targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
         }
@@ -62,7 +75,7 @@ public class Enemy : MonoBehaviour
         if (targetTransform)
         {
             Vector3 moveDir = (targetTransform.position - transform.position).normalized;
-            float moveSpeed = 3f/*8f*/;
+            float moveSpeed = speed;
 
             enemyRigidbody.velocity = moveDir * moveSpeed;
 
@@ -92,7 +105,7 @@ public class Enemy : MonoBehaviour
         {
             HealthSytem healthSytem = building.GetComponent<HealthSytem>();
             healthSytem?.Damage(10);
-            healthSytem?.Damage(999);
+            this.healthSytem?.Damage(999);
         }
     }
 
@@ -128,5 +141,41 @@ public class Enemy : MonoBehaviour
                 targetTransform = BuildingManager.Instance.GetHQBuilding().transform;
             }
         }
+    }
+
+    public void Ice(float slowDuration, float iceDuration, Func<bool> isSkilling)
+    {
+        StartCoroutine(IceCoroutine(slowDuration, iceDuration, isSkilling));
+    }
+
+    private IEnumerator IceCoroutine(float slowDuration, float iceDuration, Func<bool> isSkilling)
+    {
+        float timer = slowDuration;
+        float originalSpeed = speed;
+
+        speed /= 2f;
+
+        slowParticle.gameObject.SetActive(true);
+        slowParticle.Play();
+        while (timer > 0f && isSkilling.Invoke() && !exitIceBox)
+        {
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+
+        speed = 0f;
+        iceParticle.gameObject.SetActive(true);
+        iceParticle.Play();
+        while (isSkilling.Invoke() && !exitIceBox)
+        {
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+
+
+        slowParticle.gameObject.SetActive(false);
+        iceParticle.gameObject.SetActive(false);
+        speed = originalSpeed;
+        exitIceBox = false;
     }
 }

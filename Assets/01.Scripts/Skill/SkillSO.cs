@@ -10,4 +10,5 @@ public class SkillSO : ScriptableObject
     public string skillName;
     public KeyCode keyCode;
     public bool isDownSkill = true;
+    public bool isFast = true;
 }

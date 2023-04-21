@@ -15,7 +15,7 @@ public class SkillBase
 
     #region Property
     public SkillSO SkillSO => skillSO;
-    protected bool CanSkill => curCoolingTime > CoolingTime;
+    public bool CanSkill => curCoolingTime > CoolingTime;
     public bool IsSkilling => isSkilling;
     private float CoolingTime => skillSO.coolingTime;
     #endregion
@@ -29,10 +29,12 @@ public class SkillBase
     {
         if (!CanSkill || isSkilling) return;
 
+        isSkilling = true;
+        OnSkillDown();
+
         // 누를 때 끝나는 스킬이면 끝낸다.
-        if (skillSO.isDownSkill)
+        if (skillSO.isDownSkill && skillSO.isFast)
         {
-            OnSkillDown();
             EndSkill();
         }
 
@@ -44,7 +46,6 @@ public class SkillBase
         if (isSkilling && skillSO.isDownSkill)
         {
             OnSkillUp();
-            EndSkill();
             Debug.Log($"{GetType()} Up!");
         }
     }
@@ -52,7 +53,7 @@ public class SkillBase
     protected virtual void OnSkillDown() { }
     protected virtual void OnSkillUp() { }
 
-    private void EndSkill()
+    protected void EndSkill()
     {
         isSkilling = false;
         curCoolingTime = 0f;
@@ -73,6 +74,11 @@ public class SkillBase
         this.skillSO = skillSO;
         curCoolingTime = CoolingTime + 1f;
         isSkilling = false;
+    }
+
+    public float NormalizedValue()
+    {
+        return Mathf.Clamp01(curCoolingTime / CoolingTime);
     }
 }
 

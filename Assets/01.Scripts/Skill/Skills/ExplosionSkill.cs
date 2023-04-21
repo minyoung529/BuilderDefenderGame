@@ -28,13 +28,10 @@ public class ExplosionSkill : SkillBase
 
     private IEnumerator DestroySkillObject()
     {
-        yield return null;
-        skillObject.Find("Circle").Find("Outline").gameObject.SetActive(false);
-        skillObject.Find("Radius").gameObject.SetActive(false);
+        yield return new WaitForSeconds(CHARGING_TIME);
 
-        yield return new WaitForSeconds(1f);
-
+        EndSkill();
+        Object.Destroy(skillObject.gameObject);
         skillObject = null;
-        Object.Destroy(skillObject);
     }
 }

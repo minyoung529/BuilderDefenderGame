@@ -9,6 +9,9 @@ public class SkillManager : MonoBehaviour
     private List<SkillSO> skillInfos = new List<SkillSO>();
     private List<SkillBase> skills = new List<SkillBase>();
 
+    public IReadOnlyList<SkillSO> SkillInfos => skillInfos;
+    public IReadOnlyList<SkillBase> Skills => skills;
+
     public static SkillManager Instance { get; private set; }
 
     private void Awake()

@@ -28,6 +28,7 @@ public class GameAssets : MonoBehaviour
 
     [Header("Skill")]
     public Transform explosionSkill;
+    public IceSkillObject iceSkill;
 
     private void Awake()
     {

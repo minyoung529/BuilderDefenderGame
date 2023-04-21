@@ -53,3 +53,5 @@ MonoBehaviour:
   resourceTypeList: {fileID: 11400000, guid: ff9cd7e31df22644d805beb4060d97d6, type: 2}
   enemy: {fileID: 440638469034112795, guid: 0225a2bdd51744940a02c91cccaa31be, type: 3}
   skillList: {fileID: 11400000, guid: 2b55221e56c6e08408771fa6f23dd612, type: 2}
+  explosionSkill: {fileID: 8930926169323095163, guid: 544e87bd096754340bac97dcbc214fe7, type: 3}
+  iceSkill: {fileID: 5412220461285716592, guid: 3b8079a73697ea74a92a95078f9c17f0, type: 3}

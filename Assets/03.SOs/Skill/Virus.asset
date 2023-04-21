@@ -17,3 +17,4 @@ MonoBehaviour:
   skillName: ExplosionSkill
   keyCode: 113
   isDownSkill: 1
+  isFast: 0
