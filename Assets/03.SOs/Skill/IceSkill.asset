@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IceSkill
   m_EditorClassIdentifier: 
   coolingTime: 3
-  icon: {fileID: 21300000, guid: e72f87b7325fec245ad59659c4675bdc, type: 3}
+  icon: {fileID: 21300000, guid: 68d548291ed30de46b51388bd3931eef, type: 3}
   skillName: IceSkill
   keyCode: 50
   isDownSkill: 0

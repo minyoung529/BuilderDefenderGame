@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a0b8ffc0eae16e48b77bb6806c0ac32, type: 3}
-  m_Name: Virus
+  m_Name: LineSkill
   m_EditorClassIdentifier: 
-  coolingTime: 3
-  icon: {fileID: 21300000, guid: c8a69ecdf54ac8e4b873466605de27ff, type: 3}
-  skillName: ExplosionSkill
-  keyCode: 113
+  coolingTime: 10
+  icon: {fileID: 21300000, guid: affe83e89cb5baf4e8a28add9a6cecd8, type: 3}
+  skillName: LineSkill
+  keyCode: 51
   isDownSkill: 1
   isFast: 0

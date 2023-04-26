@@ -29,6 +29,8 @@ public class GameAssets : MonoBehaviour
     [Header("Skill")]
     public Transform explosionSkill;
     public IceSkillObject iceSkill;
+    public LineSkillObject lineSkill;
+    public PianoSkillObject pianoSkill;
 
     private void Awake()
     {

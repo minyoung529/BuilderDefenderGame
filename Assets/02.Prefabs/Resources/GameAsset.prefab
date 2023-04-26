@@ -55,3 +55,5 @@ MonoBehaviour:
   skillList: {fileID: 11400000, guid: 2b55221e56c6e08408771fa6f23dd612, type: 2}
   explosionSkill: {fileID: 8930926169323095163, guid: 544e87bd096754340bac97dcbc214fe7, type: 3}
   iceSkill: {fileID: 5412220461285716592, guid: 3b8079a73697ea74a92a95078f9c17f0, type: 3}
+  lineSkill: {fileID: 3594223849409934070, guid: b4d48cfd41914fa4cbd57f352d6ec051, type: 3}
+  pianoSkill: {fileID: 1721000285906434795, guid: 6e353330baeadd24aa45f05ee671f6b4, type: 3}

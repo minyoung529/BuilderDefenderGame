@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ExplosionSkill
   m_EditorClassIdentifier: 
   coolingTime: 3
-  icon: {fileID: 21300000, guid: c8a69ecdf54ac8e4b873466605de27ff, type: 3}
+  icon: {fileID: 21300000, guid: fa4b34e198e3332459120160fdb0a36d, type: 3}
   skillName: ExplosionSkill
   keyCode: 49
   isDownSkill: 1
