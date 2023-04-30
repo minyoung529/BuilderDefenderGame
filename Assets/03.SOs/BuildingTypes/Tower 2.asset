@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24aa25ef4cc3924e8bc1927b9df4787, type: 3}
   m_Name: Tower 2
   m_EditorClassIdentifier: 
-  nameString: Tower
-  prefab: {fileID: 4797054207191840155, guid: 41334d407e1113e4cb2019da7c1cdec4, type: 3}
+  nameString: Vocal
+  prefab: {fileID: 4797054207191840155, guid: 8821adf2abb75544c8e9796a8df940f9, type: 3}
   hasResourceGeneratorData: 0
   resourceGeneratorData:
     timerMax: 0.5

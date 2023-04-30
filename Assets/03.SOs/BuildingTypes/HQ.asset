@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24aa25ef4cc3924e8bc1927b9df4787, type: 3}
   m_Name: HQ
   m_EditorClassIdentifier: 
-  nameString: HQ
+  nameString: Drum
   prefab: {fileID: 4797054207191840155, guid: 5a800e0e8a07bfc43bb92bd086a0dfcf, type: 3}
+  hasResourceGeneratorData: 0
   resourceGeneratorData:
     timerMax: 1
     resourceType: {fileID: 11400000, guid: f7f60b0712f929a41be7a36399d0aebe, type: 2}
@@ -23,3 +24,4 @@ MonoBehaviour:
   minConstructionRadius: 0
   constructionCostArray: []
   healthAmountMax: 150
+  constructionTimerMax: 0

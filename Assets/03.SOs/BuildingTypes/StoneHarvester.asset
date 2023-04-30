@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24aa25ef4cc3924e8bc1927b9df4787, type: 3}
   m_Name: StoneHarvester
   m_EditorClassIdentifier: 
-  nameString: StoneHarvester
+  nameString: Piano
   prefab: {fileID: 4797054207191840155, guid: d7acc4534d867f3408c525c2ed416e91, type: 3}
   hasResourceGeneratorData: 1
   resourceGeneratorData:

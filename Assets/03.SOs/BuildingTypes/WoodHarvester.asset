@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24aa25ef4cc3924e8bc1927b9df4787, type: 3}
   m_Name: WoodHarvester
   m_EditorClassIdentifier: 
-  nameString: WoodHarvester
+  nameString: Bass
   prefab: {fileID: 4797054207191840155, guid: 939b5d705813e99478e6075af596f799, type: 3}
   hasResourceGeneratorData: 1
   resourceGeneratorData:

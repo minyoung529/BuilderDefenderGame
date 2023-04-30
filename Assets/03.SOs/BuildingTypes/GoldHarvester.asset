@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24aa25ef4cc3924e8bc1927b9df4787, type: 3}
   m_Name: GoldHarvester
   m_EditorClassIdentifier: 
-  nameString: GoldHarvester
+  nameString: Guitar
   prefab: {fileID: 4797054207191840155, guid: 314bd74734368c6488836f6916a1e204, type: 3}
   hasResourceGeneratorData: 1
   resourceGeneratorData:

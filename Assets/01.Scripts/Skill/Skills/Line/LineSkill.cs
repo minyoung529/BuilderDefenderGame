@@ -15,7 +15,7 @@ public class LineSkill : SkillBase
     private void OnEnd()
     {
         skillObject.OnEnd -= OnEnd;
-        
+        EndSkill();
         Object.Destroy(skillObject.gameObject);
         skillObject = null;
     }
