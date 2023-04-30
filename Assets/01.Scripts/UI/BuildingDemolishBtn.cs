@@ -22,6 +22,7 @@ public class BuildingDemolishBtn : MonoBehaviour
             ResourceManager.Instance.AddResource(resourceAmount.resourceType, Mathf.FloorToInt(resourceAmount.amount * 0.6f));
         }
 
+        MusicManager.Instance.Destroyed(buildingType);
         Destroy(building.gameObject);
     }
 }

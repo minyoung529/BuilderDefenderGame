@@ -10,15 +10,19 @@ public class PianoSkill : SkillBase
     {
         skillObject = Object.Instantiate(GameAssets.Instance.pianoSkill);
         skillObject.OnEnd += ResetSkill;
+
+        MusicManager.Instance.VolumeDown();
     }
 
     private void ResetSkill()
     {
+        MusicManager.Instance.VolumeUp();
+
         skillObject.OnEnd -= ResetSkill;
+
+        EndSkill();
 
         Object.Destroy(skillObject.gameObject);
         skillObject = null;
-
-        EndSkill();
     }
 }

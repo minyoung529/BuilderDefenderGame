@@ -33,6 +33,7 @@ namespace Shot
             for (int i = 0; i < count; i++)
             {
                 Shot();
+                SoundManager.Instance.PlaySound(Sound.EnemyHit);
                 yield return new WaitForSecondsRealtime(1f);
             }
 

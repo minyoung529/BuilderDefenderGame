@@ -31,6 +31,8 @@ public class BuildingConstruction : MonoBehaviour
         if (constructionTimer <= 0f)
         {
             Debug.Log("Ding!");
+            MusicManager.Instance.Active(buildingType);
+
             Instantiate(buildingType.prefab, transform.position, Quaternion.identity);
             Instantiate(GameAssets.Instance.pfBuildingPlacedParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);

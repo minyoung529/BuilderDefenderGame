@@ -106,7 +106,7 @@ public class PianoSkillObject : MonoBehaviour
         piano.SetActive(false);
         Time.timeScale = 1f;
 
-        if (count == 3)
+        if (count == 4)
         {
             heartShot.MultipleShot(count, OnEnd);
             Debug.Log("¼º°ø ^__^");

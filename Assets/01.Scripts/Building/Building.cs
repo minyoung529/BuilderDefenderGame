@@ -52,6 +52,8 @@ public class Building : MonoBehaviour
         ChromaticAberrationEffect.Instance.SetWeight(1f);
         SoundManager.Instance.PlaySound(Sound.BuildingDestroyed);
         Destroy(gameObject);
+
+        MusicManager.Instance.Destroyed(buildingType);
     }
 
     private void OnMouseEnter()

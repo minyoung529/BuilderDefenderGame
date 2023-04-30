@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d47ebba5bd78124089828b20905aff1, type: 3}
-  m_Name: Wood
+  m_Name: Love
   m_EditorClassIdentifier: 
-  nameString: Wood
-  nameShort: W
-  sprite: {fileID: 21300000, guid: 0b991b4895d956f4ea5f954ab13b7529, type: 3}
-  colorHex: 9A4C00
+  nameString: Love
+  nameShort: "\u2665"
+  sprite: {fileID: 21300000, guid: b69725c163fc578459a120c8d28fcfae, type: 3}
+  colorHex: C3A915
