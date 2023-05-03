@@ -29,12 +29,12 @@ public class EnemyWaveUI : MonoBehaviour
     private void Start()
     {
         enemyWaveManager.OnWaveNumberChanged += EnemyWaveManager_OnWaveNumberChanged;
-        SetWaveNumberText("Wave " + enemyWaveManager.GetWaveNumber());
+        SetWaveNumberText("Concert " + enemyWaveManager.GetWaveNumber());
     }
 
     private void EnemyWaveManager_OnWaveNumberChanged(object sender, System.EventArgs e)
     {
-        SetWaveNumberText("Wave " + enemyWaveManager.GetWaveNumber());
+        SetWaveNumberText("Concert " + enemyWaveManager.GetWaveNumber());
     }
 
     private void Update()
@@ -105,7 +105,7 @@ public class EnemyWaveUI : MonoBehaviour
         }
         else
         {
-            SetMessageText("Next Wave in " + nextWaveSpawnTimer.ToString("F1") + "s");
+            SetMessageText("Next Concert in " + nextWaveSpawnTimer.ToString("F1") + "s");
         }
     }
 
