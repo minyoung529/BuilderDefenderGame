@@ -71,7 +71,13 @@ public class TooltipUI : MonoBehaviour
 
     public void Show(string tooltipText, bool isDelay = false)
     {
-        if (isWaitDelay) return;
+        if (isWaitDelay)
+        {
+            StopAllCoroutines();
+            isWaitDelay = false;
+            Hide();
+            return;
+        }
 
         gameObject.SetActive(true);
         SetText(tooltipText);

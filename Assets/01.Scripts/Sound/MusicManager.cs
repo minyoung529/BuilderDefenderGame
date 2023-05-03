@@ -28,6 +28,11 @@ public class MusicManager : MonoBehaviour
             {
                 audioDict.Add(type, child.GetComponent<AudioSource>());
                 checks.Add(type, 0);
+
+                if(type.nameString == "Drum")
+                {
+                    checks[type] = 100000;
+                }
             }
         }
 

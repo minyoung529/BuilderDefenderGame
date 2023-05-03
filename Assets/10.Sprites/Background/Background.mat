@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Background
-  m_Shader: {fileID: -6465566751694194690, guid: b24b91155e2df5c4fbf9a58aab7d668e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: e9128dfe862e96c4f9d67c52ba8106ac, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -54,10 +54,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ColorChange: 16.16
     - _EnableExternalAlpha: 0
+    - _Speed: 200
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 102.75575, g: 102.75575, b: 102.75575, a: 0}
+    - _EmissionColor: {r: 18.164822, g: 18.164822, b: 18.164822, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

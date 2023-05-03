@@ -28,6 +28,11 @@ public class Keyboard : MonoBehaviour
 
     private bool isSelected = false;
 
+    [SerializeField]
+    private ParticleSystem successPs;
+    [SerializeField]
+    private ParticleSystem failPs;
+
     private void Awake()
     {
         audioSource = transform.parent.GetComponent<AudioSource>();
@@ -35,6 +40,8 @@ public class Keyboard : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (isSelected) return;
+
         OnDown?.Invoke(index);
         PlaySound();
         isSelected = true;
@@ -63,10 +70,12 @@ public class Keyboard : MonoBehaviour
     internal void Success()
     {
         spriteRenderer.DOColor(successColor, 0.5f).SetUpdate(true);
+        successPs.gameObject.SetActive(true);
     }
 
     internal void Fail()
     {
         spriteRenderer.DOColor(failColor, 0.5f).SetUpdate(true);
+        failPs.gameObject.SetActive(true);
     }
 }
