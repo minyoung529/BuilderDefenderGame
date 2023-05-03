@@ -20,6 +20,9 @@ public class LineSkillObject : MonoBehaviour
     {
         lines = new Line[LINE_COUNT];
         OnEnd += DestroyData;
+
+        transform.SetParent(Camera.main.transform);
+        transform.localPosition = Vector3.zero;
     }
 
     private void Start()
@@ -36,7 +39,7 @@ public class LineSkillObject : MonoBehaviour
             Vector3 scale = linePrefab.transform.localScale;
             scale.y -= 0.85f * i;
 
-            Transform line = Instantiate(linePrefab, Camera.main.transform).transform;
+            Transform line = Instantiate(linePrefab, transform).transform;
             line.localPosition = localPos;
             line.localScale = scale;
 
