@@ -58,6 +58,7 @@ public enum Sound
     EnemyDie,
     EnemyHit,
     GameOver,
+    HeartBullet,
 
     Count
 }

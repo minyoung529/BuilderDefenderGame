@@ -116,5 +116,7 @@ public class PianoSkillObject : MonoBehaviour
             heartShot.MultipleShot(count, OnEnd);
             Debug.Log("½ÇÆÐ ¤Ð__¤Ð");
         }
+
+        SoundManager.Instance.PlaySound(Sound.HeartBullet);
     }
 }
