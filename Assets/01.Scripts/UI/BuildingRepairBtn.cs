@@ -11,6 +11,7 @@ public class BuildingRepairBtn : MonoBehaviour
     [SerializeField]
     private ResourceTypeSO goldResourceType;
 
+
     private void Awake()
     {
         Button b = GetComponentInChildren<Button>();
